@@ -29,9 +29,9 @@ public class KMeans {
     
     public static void main(String[] args) {
         Point[] cent = new Point[2];
-        cent[0] = new Point(5,5);
+        cent[0] = new Point(10,9);
         cent[0].setColor(Color.red);
-        cent[1] = new Point(-20,10);
+        cent[1] = new Point(-8,-13);
         cent[1].setColor(Color.CYAN);
         KMeans km = new KMeans();
         km.configure(10, cent);
