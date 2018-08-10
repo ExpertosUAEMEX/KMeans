@@ -29,20 +29,19 @@ public class Main extends JFrame {
     }
 
     private void initComponents() {
+        Point[] cent = new Point[2];
+        cent[0] = new Point(7,5);
+        cent[0].setColor(Color.red);
+        cent[1] = new Point(-8,-1);
+        cent[1].setColor(Color.CYAN);
+        KMeans km = new KMeans();
+        km.configure(20, cent);
         try {
-            Point[] cent = new Point[2];
-            cent[0] = new Point(7,5);
-            cent[0].setColor(Color.red);
-            cent[1] = new Point(-8,-1);
-            cent[1].setColor(Color.CYAN);
-            KMeans km = new KMeans();
-            km.configure(20, cent);
             km.run();
             cp = new ChartPanel(km.getCentroid(),km.getAleatoryPoints());
             add(cp);
         } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(rootPane, "Asegusese de configurar la clase KMeans","Error",JOptionPane.ERROR_MESSAGE);
-        }finally{
             System.exit(0);
         }
         

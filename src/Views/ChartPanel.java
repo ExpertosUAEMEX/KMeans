@@ -32,7 +32,7 @@ public class ChartPanel extends JPanel {
     /**
      * Sobreescribimos el método paint el cual se encarga de pintar el plano
      * cartesiano, así como los puntos y centroides que han sido tratados en la
-     * clase del algoritmo.
+     * clase del algoritmos
      */
     @Override
     public void paint(Graphics g){
