@@ -38,13 +38,16 @@ public class Utils {
     public static void randomPatterns(Point[] ar ){
         Random r = new Random(System.currentTimeMillis());
         for(int i=0; i<ar.length;i++){
-            ar[i]= new Point(r.nextInt(10),r.nextInt(10));
+            ar[i]= new Point(r.nextInt(600),r.nextInt(600));
             ar[i].setColor(Color.BLACK);
             if(i%3!=0){
                 ar[i].setX(ar[i].getX()*-1);
                 
             }else if(i%2!=0){
                 ar[i].setY(ar[i].getY()*-1);
+            }else if(i%6!=0){
+                ar[i].setY(ar[i].getY()*-1);
+                ar[i].setX(ar[i].getX()*-1);
             }
             System.out.println("'"+ar[i].getX()+","+ar[i].getY()+"'");
         }

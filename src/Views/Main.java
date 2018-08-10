@@ -30,12 +30,12 @@ public class Main extends JFrame {
 
     private void initComponents() {
         Point[] cent = new Point[2];
-        cent[0] = new Point(7,5);
-        cent[0].setColor(Color.red);
-        cent[1] = new Point(-8,-1);
-        cent[1].setColor(Color.CYAN);
+        cent[0] = new Point(-30,50);
+        cent[0].setColor(Color.RED);
+        cent[1] = new Point(100,50);
+        cent[1].setColor(Color.BLUE);
         KMeans km = new KMeans();
-        km.configure(20, cent);
+        km.configure(600, cent);
         try {
             km.run();
             cp = new ChartPanel(km.getCentroid(),km.getAleatoryPoints());
