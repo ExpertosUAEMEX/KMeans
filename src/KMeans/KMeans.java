@@ -41,7 +41,7 @@ public class KMeans {
      * {..               .....     .....}
      * {dP1Cn,dP2Cn,dP3Cn,.........dPnCn}
      */
-    public void run(){
+    public void run()throws  NullPointerException{
         double[][] distances= new double[centroid.length][aleatoryPoints.length];
         for(int i=0;i<centroid.length;i++){
             System.out.println(centroid[i].getX()+","+centroid[i].getY());
