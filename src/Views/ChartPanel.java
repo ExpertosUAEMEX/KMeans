@@ -10,14 +10,30 @@ import java.util.function.Consumer;
 import javax.swing.JPanel;
 
 public class ChartPanel extends JPanel {
+    /**
+     * Creamos la clase ChartPanel que extiende de la clase JPanel, es decir 
+     * esta clase se comporta como un JPanel, la finalidad de este panel es la
+     * de graficar el plano cartesiano y los puntos generados por el algoritmo,
+     * así como los atractores, para poder visualizar el comportamiento de este
+     * algoritmo.
+     */
     Point[] centroids;
     Point[] points;
+    /**
+     * Tenemos un constructor en el cual recibe como parámetros el arreglo de 
+     * puntos aleatorios generados, así como el arreglo de los atractores
+     */
     public ChartPanel(Point[] centr, Point[] points){
         
         
         this.centroids=centr;
         this.points=points;
     }
+    /**
+     * Sobreescribimos el método paint el cual se encarga de pintar el plano
+     * cartesiano, así como los puntos y centroides que han sido tratados en la
+     * clase del algoritmo.
+     */
     @Override
     public void paint(Graphics g){
         g.setColor(Color.WHITE);
