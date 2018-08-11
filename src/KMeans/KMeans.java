@@ -38,7 +38,7 @@ public class KMeans {
      * los patrones respecto a cada atractor:
      * {dP1C1,dP2C1,dP3C1,.........dPnC1}
      * {dP1C2,dP2C2,dP3C2,.........dPnC2}
-     * {..               .....     .....}
+     * {..               .....        ..}
      * {dP1Cn,dP2Cn,dP3Cn,.........dPnCn}
      */
     public void run()throws  NullPointerException{
@@ -51,6 +51,7 @@ public class KMeans {
             }
             System.out.println("");
         }
+        
         
     }
     

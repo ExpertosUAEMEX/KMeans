@@ -46,7 +46,7 @@ public class ChartPanel extends JPanel {
         }
         for(int i=0;i<points.length;i++){
             g.setColor(points[i].getColor());
-            g.fillOval((int)((getWidth())-points[i].getX()),(int)((getHeight())-points[i].getY()), 5, 5);
+            g.fillOval((int)((getWidth())-points[i].getX()),(int)((getHeight())-points[i].getY()), 4, 4);
         }
         
     }
