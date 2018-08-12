@@ -192,7 +192,6 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Asegusese de configurar la clase KMeans", "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {

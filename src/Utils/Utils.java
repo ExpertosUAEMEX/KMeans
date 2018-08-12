@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.Random;
 public class Utils {
+
     /*
      * Creamos una clase llamada Utils en la cual se realizan las operaciones
      * matemáticas que requiere el algoritmo, el método getEuclideanDistance()

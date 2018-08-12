@@ -13,7 +13,7 @@ public class KMeans {
      */
     private Point[] aleatoryPoints;
     private Point[] centroid;
-    /**
+    /*
      * Métodos para acceder a los atributos
      */
     public Point[] getAleatoryPoints() {
