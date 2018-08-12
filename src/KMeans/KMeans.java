@@ -50,9 +50,7 @@ public class KMeans {
                 System.out.print(distances[i][j]+" ");
             }
             System.out.println("");
-        }
-           
+        }  
     }
-    
     
 }

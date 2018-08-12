@@ -51,7 +51,7 @@ public class Utils {
                 ar[i].setY(ar[i].getY()*-1);
                 ar[i].setX(ar[i].getX()*-1);
             }*/
-            System.out.println("'"+ar[i].getX()+","+ar[i].getY()+"'");
+           // System.out.println("'"+ar[i].getX()+","+ar[i].getY()+"'");
         }
         
     }

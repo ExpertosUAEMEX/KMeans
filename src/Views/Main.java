@@ -21,8 +21,7 @@ public class Main extends javax.swing.JFrame {
     private Random r = new Random(System.currentTimeMillis());
 
     public Main() {
-        initComponents();
-        getContentPane().setLayout(null);
+        initComponents(); 
         setTable();
         setVisible(true);
 
@@ -46,7 +45,6 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         patrones = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         classes = new javax.swing.JTextField();
@@ -54,27 +52,12 @@ public class Main extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 14)); // NOI18N
         jLabel1.setText("Número de Patrones: ");
-
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 102, 0), 1, true));
-        jPanel1.setMaximumSize(new java.awt.Dimension(600, 600));
-        jPanel1.setMinimumSize(new java.awt.Dimension(600, 600));
-        jPanel1.setPreferredSize(new java.awt.Dimension(600, 600));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 598, Short.MAX_VALUE)
-        );
 
         patrones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,13 +97,17 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(255, 51, 0));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addContainerGap(604, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(patrones, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -130,26 +117,28 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(jButton1))))
+                        .addComponent(jButton1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(55, 55, 55)
                 .addComponent(jLabel1)
                 .addGap(6, 6, 6)
                 .addComponent(patrones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addGap(6, 6, 6)
                 .addComponent(classes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addGap(6, 6, 6)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(jButton1))
+                .addComponent(jButton1)
+                .addContainerGap(247, Short.MAX_VALUE))
+            .addComponent(jSeparator1)
         );
 
         pack();
@@ -175,12 +164,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_patronesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
         cent = new Point[numC];
         try {
+            numP = Integer.parseInt(patrones.getText());
+            numC = Integer.parseInt(classes.getText());
             DefaultTableModel mdl = (DefaultTableModel) jTable1.getModel();
             for (int i = 0; i < mdl.getRowCount(); i++) {
                 cent[i] = new Point(Integer.parseInt("" + mdl.getValueAt(i, 0)), Integer.parseInt("" + mdl.getValueAt(i, 1)));
-                cent[i].setColor(new Color(r.nextInt(200), r.nextInt(200), r.nextInt(200)));
+                cent[i].setColor(new Color(r.nextInt(200), r.nextInt(220), r.nextInt(200)));
+                System.out.println(""+cent[i].getX()+" "+cent[i].getY());
             }
             KMeans km = new KMeans();
             km.configure(numP, cent);
@@ -188,10 +181,29 @@ public class Main extends javax.swing.JFrame {
             cp = new ChartPanel(km.getCentroid(), km.getAleatoryPoints());
             cp.setBounds(0, 0, 600, 600);
             add(cp);
+            
+            cp.updateUI();
         } catch (NullPointerException ex) {
             JOptionPane.showMessageDialog(rootPane, "Asegusese de configurar la clase KMeans", "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
+        /*Point[] cent = new Point[2];
+        try {
+            Random r = new Random();
+            for (int i = 0; i < 2; i++) {
+                cent[i] = new Point(r.nextInt(600),r.nextInt(600));
+                cent[i].setColor(new Color(r.nextInt(200), r.nextInt(200), r.nextInt(200)));
+            }
+            KMeans km = new KMeans();
+            km.configure(500, cent);
+            km.run();
+            jPanel1 = new ChartPanel(km.getCentroid(), km.getAleatoryPoints());
+            jPanel1.setBounds(0, 0, 600, 600);
+            add(jPanel1);
+        } catch (NullPointerException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Asegusese de configurar la clase KMeans", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }*/
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
@@ -205,8 +217,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField patrones;
     // End of variables declaration//GEN-END:variables
