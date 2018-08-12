@@ -23,6 +23,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents(); 
         setTable();
+        getContentPane().setBackground(Color.black);
         setVisible(true);
 
     }
@@ -57,6 +58,7 @@ public class Main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Número de Patrones: ");
 
         patrones.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +68,7 @@ public class Main extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Número de Clases: ");
 
         classes.addActionListener(new java.awt.event.ActionListener() {
@@ -88,6 +91,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jLabel3.setFont(new java.awt.Font("DejaVu Sans Condensed", 3, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Atractores:");
 
         jButton1.setText("Generar Centroides");
@@ -172,7 +176,7 @@ public class Main extends javax.swing.JFrame {
             DefaultTableModel mdl = (DefaultTableModel) jTable1.getModel();
             for (int i = 0; i < mdl.getRowCount(); i++) {
                 cent[i] = new Point(Integer.parseInt("" + mdl.getValueAt(i, 0)), Integer.parseInt("" + mdl.getValueAt(i, 1)));
-                cent[i].setColor(new Color(r.nextInt(200), r.nextInt(220), r.nextInt(200)));
+                cent[i].setColor(new Color(90+r.nextInt(200+1-90),90+r.nextInt(220+1-90), 90+r.nextInt(200+1-90)));
                 System.out.println(""+cent[i].getX()+" "+cent[i].getY());
             }
             KMeans km = new KMeans();
