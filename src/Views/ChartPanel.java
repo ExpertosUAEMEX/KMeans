@@ -19,7 +19,7 @@ public class ChartPanel extends JPanel {
      */
     Point[] centroids;
     Point[] points;
-    /**
+    /*
      * Tenemos un constructor en el cual recibe como parámetros el arreglo de 
      * puntos aleatorios generados, así como el arreglo de los atractores
      */
@@ -29,7 +29,7 @@ public class ChartPanel extends JPanel {
         this.centroids=centr;
         this.points=points;
     }
-    /**
+    /*
      * Sobreescribimos el método paint el cual se encarga de pintar el plano
      * cartesiano, así como los puntos y centroides que han sido tratados en la
      * clase del algoritmos

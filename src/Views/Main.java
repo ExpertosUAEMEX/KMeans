@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author cachubis
  */
 public class Main extends JFrame {
-    /**
+    /*
      * Creamos la clase Main, que extiende de la clase JFrame, es decir,
      * se comporta como un frame(Ventana), la finalidad de este frame es el de
      * unir la parte lógica del algoritmo con la parte gráfica. 

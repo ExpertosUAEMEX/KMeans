@@ -6,7 +6,7 @@ import java.awt.Color;
 import java.util.Arrays;
 
 public class KMeans {
-    /**
+    /*
      * La clase KMeans implementa el algoritmo y tiene como atributos dos 
      * arreglos de puntos, en los cuales almacenaremos los puntos aleatorios
      * y los atractores(Cerntroides) 
@@ -23,7 +23,7 @@ public class KMeans {
     public Point[] getCentroid() {
         return centroid;
     }
-    /**
+    /*
      * El método configure(), recibe como parametros el número de 
      * patrones(puntos); y un arreglo de puntos el cual contiene los atractores
      * Genera los puntos aleatorios haciendo uso de nuestra clase Utils
@@ -33,7 +33,7 @@ public class KMeans {
         centroid = centroids;
         Utils.randomPatterns(aleatoryPoints);
     }
-    /**
+    /*
      * El método run() calcula y llena una matriz con las distancias de todos
      * los patrones respecto a cada atractor:
      * {dP1C1,dP2C1,dP3C1,.........dPnC1}
@@ -51,6 +51,7 @@ public class KMeans {
             }
             System.out.println("");
         }
+        
         
         
     }

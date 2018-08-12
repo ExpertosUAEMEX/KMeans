@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.Random;
 public class Utils {
-    /**
+    /*
      * Creamos una clase llamada Utils en la cual se realizan las operaciones
      * matemáticas que requiere el algoritmo, el método getEuclideanDistance()
      * devuelve la distancia que hay entre dos puntos
@@ -17,7 +17,7 @@ public class Utils {
         d= (int)Math.sqrt(Math.pow((p2.getX()-p1.getX()),2)+Math.pow((p2.getY()-p1.getY()), 2));
         return d;
     }
-    /**
+    /*
      * El método calculateCentroid() reasigna las nuevas coordenadas del 
      * centroide de acuerdo con el promedio de las componentes en los ejes x y y
      */
@@ -31,7 +31,7 @@ public class Utils {
         attractor.setX(sumX/objectsClass.size());
         attractor.setY(sumY/objectsClass.size());
     }
-    /**
+    /*
      * El método randomPatterns() genera patrones (puntos) aleatorios en todo
      * el plano cartesiano
      * (int)(rnd.nextDouble() * 6 + 1);
