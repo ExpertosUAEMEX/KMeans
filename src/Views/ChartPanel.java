@@ -23,9 +23,7 @@ public class ChartPanel extends JPanel {
      * Tenemos un constructor en el cual recibe como parámetros el arreglo de 
      * puntos aleatorios generados, así como el arreglo de los atractores
      */
-    public ChartPanel(Point[] centr, Point[] points){
-        
-        
+    public ChartPanel(Point[] centr, Point[] points){        
         this.centroids=centr;
         this.points=points;
     }
@@ -49,5 +47,8 @@ public class ChartPanel extends JPanel {
             g.fillOval((int)((getWidth())-points[i].getX()),(int)((getHeight())-points[i].getY()), 4, 4);
         }
         
+    }
+    public JPanel getPanel(){
+    return this;
     }
 }
