@@ -51,9 +51,7 @@ public class KMeans {
             }
             System.out.println("");
         }
-        
-        
-        
+           
     }
     
     
