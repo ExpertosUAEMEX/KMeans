@@ -41,7 +41,7 @@ public class Utils {
         Random r = new Random(System.currentTimeMillis());
         for(int i=0; i<ar.length;i++){
             ar[i]= new Point((int)(r.nextDouble()*590+5),(int)(r.nextDouble()*590+5));
-            ar[i].setColor(Color.BLACK);
+            ar[i].setColor(Color.WHITE);
             /*if(i%3!=0){
                 ar[i].setX(ar[i].getX()*-1);
                 

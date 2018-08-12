@@ -45,7 +45,7 @@ public class KMeans {
      * {dP1Cn,dP2Cn,dP3Cn,.........dPnCn}
      */
     public void run() throws NullPointerException {
-        /*double[][] distances = new double[centroid.length][aleatoryPoints.length];
+       /* double[][] distances = new double[centroid.length][aleatoryPoints.length];
         for (int i = 0; i < centroid.length; i++) {
             System.out.println(centroid[i].getX() + "," + centroid[i].getY());
             for (int j = 0; j < aleatoryPoints.length; j++) {
@@ -65,11 +65,13 @@ public class KMeans {
         
         for(int i=0;i<aleatoryPoints.length;i++){
             int[] dst= new int[centroid.length];
+            int index=0;
             for(int j=0;j<centroid.length;j++){
                 dst[j]=(int)Utils.getEuclideanDistance(aleatoryPoints[i], centroid[j]);
             }
-            aleatoryPoints[i].setColor(centroid[menor(dst)].getColor());
+            aleatoryPoints[i].setColor(centroid[find(menor(dst),dst)].getColor());
         }
+        
 
     }
 
@@ -79,7 +81,14 @@ public class KMeans {
             if(num[i]<num[iMenor])
                 iMenor = i;
         }
-        return iMenor;
+        return num[iMenor];
     }
-
+    private int find(int x, int[] ar){    
+        for (int i = 0; i <ar.length; i++) {
+            if (ar[i]==x) {
+             return i;
+            }
+        }
+        return -1;
+    }
 }

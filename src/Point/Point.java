@@ -19,6 +19,7 @@ public class Point {
     public Point(int x, int y){
         this.x=x;
         this.y=y;
+        this.color = Color.WHITE;
     }
     /*
      * Contamos con el método setColor que nos ayuda a inicializar los puntos 
