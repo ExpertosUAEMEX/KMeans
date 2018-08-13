@@ -23,7 +23,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents(); 
         setTable();
-        getContentPane().setBackground(Color.black);
+        getContentPane().setBackground(Color.DARK_GRAY);
         setVisible(true);
 
     }
@@ -175,8 +175,9 @@ public class Main extends javax.swing.JFrame {
             numC = Integer.parseInt(classes.getText());
             DefaultTableModel mdl = (DefaultTableModel) jTable1.getModel();
             for (int i = 0; i < mdl.getRowCount(); i++) {
-                cent[i] = new Point(Integer.parseInt("" + mdl.getValueAt(i, 0)), Integer.parseInt("" + mdl.getValueAt(i, 1)));
-                cent[i].setColor(new Color(90+r.nextInt(200+1-90),90+r.nextInt(220+1-90), 90+r.nextInt(200+1-90)));
+                cent[i] = new Point(300+Integer.parseInt("" + mdl.getValueAt(i, 0))
+                        , 300-Integer.parseInt("" + mdl.getValueAt(i, 1)));
+                cent[i].setColor(new Color(90+r.nextInt(250+1-90),90+r.nextInt(250+1-90), 90+r.nextInt(250+1-90)));
                 System.out.println(""+cent[i].getX()+" "+cent[i].getY());
             }
             KMeans km = new KMeans();

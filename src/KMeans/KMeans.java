@@ -2,7 +2,10 @@ package KMeans;
 
 import Point.Point;
 import Utils.Utils;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 public class KMeans {
 
@@ -45,50 +48,17 @@ public class KMeans {
      * {dP1Cn,dP2Cn,dP3Cn,.........dPnCn}
      */
     public void run() throws NullPointerException {
-       /* double[][] distances = new double[centroid.length][aleatoryPoints.length];
-        for (int i = 0; i < centroid.length; i++) {
-            System.out.println(centroid[i].getX() + "," + centroid[i].getY());
-            for (int j = 0; j < aleatoryPoints.length; j++) {
-                distances[i][j] = Utils.getEuclideanDistance(aleatoryPoints[j], centroid[i]);
-                System.out.print(distances[i][j] + " ");
+        ArrayList<Integer> dist;
+        ArrayList<Integer> sort;
+        for(Point p : aleatoryPoints){
+            dist= new ArrayList<>();
+            sort= new ArrayList<>();
+            for(int i=0;i<centroid.length;i++ ){
+                dist.add((int) Utils.getEuclideanDistance(p, centroid[i]));
+                sort=(ArrayList<Integer>) dist.clone();
             }
-            System.out.println("");
-        }
-        double[] pC = new double[centroid.length];
-        for (int j = 0; j < aleatoryPoints.length; j++) {
-            for (int i = 0; i < centroid.length; i++) {
-                pC[i] = distances[i][j];
-                aleatoryPoints[j].setColor(centroid[menor(pC)].getColor());
-
-            }
-        }*/
-        
-        for(int i=0;i<aleatoryPoints.length;i++){
-            int[] dst= new int[centroid.length];
-            int index=0;
-            for(int j=0;j<centroid.length;j++){
-                dst[j]=(int)Utils.getEuclideanDistance(aleatoryPoints[i], centroid[j]);
-            }
-            aleatoryPoints[i].setColor(centroid[find(menor(dst),dst)].getColor());
-        }
-        
-
-    }
-
-    public int menor(int [] num){
-        int iMenor = 0;
-        for(int i=1;i<num.length;i++){
-            if(num[i]<num[iMenor])
-                iMenor = i;
-        }
-        return num[iMenor];
-    }
-    private int find(int x, int[] ar){    
-        for (int i = 0; i <ar.length; i++) {
-            if (ar[i]==x) {
-             return i;
-            }
-        }
-        return -1;
+            Collections.sort(sort);
+            p.setColor(centroid[dist.indexOf(sort.get(0))].getColor());
+         } 
     }
 }

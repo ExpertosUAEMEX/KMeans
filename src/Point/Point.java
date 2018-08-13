@@ -12,6 +12,7 @@ public class Point {
     private int x;
     private int y;
     private Color color;
+    
     /*
      * Creamos un constructor que recibe dos parámetros enteros, los cuales 
      * son las coordenadas de l punto y las asigna a los respectivos atributos

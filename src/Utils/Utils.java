@@ -3,8 +3,6 @@ package Utils;
 import Point.Point;
 import java.awt.Color;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.function.Consumer;
 import java.util.Random;
 public class Utils {
 
@@ -14,8 +12,15 @@ public class Utils {
      * devuelve la distancia que hay entre dos puntos
      */
     public static double getEuclideanDistance(Point p1, Point p2){
+
         int d;
-        d= (int)Math.sqrt(Math.pow((p2.getX()-p1.getX()),2)+Math.pow((p2.getY()-p1.getY()), 2));
+        /*d= (int)Math.sqrt(Math.pow((p2.getX()-p1.getX()),2)+Math.pow((p2.getY()-p1.getY()), 2));*/
+        int x1=p1.getX()-(600/2);
+        int x2=p2.getX()-(600/2);
+        int y1=(600/2)-p1.getY();
+        int y2=(600/2)-p2.getY();
+        
+        d=(int)Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1), 2));
         return d;
     }
     /*
@@ -42,12 +47,12 @@ public class Utils {
         for(int i=0; i<ar.length;i++){
             ar[i]= new Point((int)(r.nextDouble()*590+5),(int)(r.nextDouble()*590+5));
             ar[i].setColor(Color.WHITE);
-            /*if(i%3!=0){
+            /*if(i%3!=0){6
                 ar[i].setX(ar[i].getX()*-1);
                 
             }else if(i%2!=0){
                 ar[i].setY(ar[i].getY()*-1);
-            }else if(i%6!=0){
+            }else if(i%7!=0){
                 ar[i].setY(ar[i].getY()*-1);
                 ar[i].setX(ar[i].getX()*-1);
             }*/

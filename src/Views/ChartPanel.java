@@ -42,12 +42,12 @@ public class ChartPanel extends JPanel {
         g.fillRect(0, getHeight()/2,getWidth() , 2);
         for (Point centroid : centroids) {
             g.setColor(centroid.getColor());
-            g.fillOval((int) ((getWidth()/2) - centroid.getX()), (int) ((getHeight()/2) - centroid.getY()), 10, 10);
-            g.drawString("C("+centroid.getX()+","+centroid.getY()+")", (int) ((getWidth()/2) - centroid.getX()),(int) ((getHeight()/2) - centroid.getY()));
+            g.fillOval((int) ((300) - centroid.getX()), (int) ((300) - centroid.getY()), 13, 13);
+            g.drawString("C("+(centroid.getX()-300)+","+(300-centroid.getY())+")", (int) ((getWidth()/2) - centroid.getX()),(int) ((getHeight()/2) - centroid.getY()));
         }
         for(int i=0;i<points.length;i++){
             g.setColor(points[i].getColor());
-            g.fillOval((int)((getWidth())-points[i].getX()),(int)((getHeight())-points[i].getY()), 4, 4);
+            g.fillOval((int)((getWidth())-points[i].getX()),(int)((getHeight())-points[i].getY()), 7, 7);
         }
         
     }
