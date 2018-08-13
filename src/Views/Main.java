@@ -19,7 +19,7 @@ public class Main extends javax.swing.JFrame {
     private Point[] cent;
     private ChartPanel cp;
     private Random r = new Random(System.currentTimeMillis());
-
+    private KMeans km;
     public Main() {
         initComponents(); 
         setTable();
@@ -181,7 +181,7 @@ public class Main extends javax.swing.JFrame {
                 cent[i].setColor(new Color(90+r.nextInt(250+1-90),90+r.nextInt(250+1-90), 90+r.nextInt(250+1-90)));
                 System.out.println(""+cent[i].getX()+" "+cent[i].getY());
             }
-            KMeans km = new KMeans();
+            km = new KMeans();
             km.configure(numP, cent);
             km.run();
             cp = new ChartPanel(km.getCentroid(), km.getAleatoryPoints());
@@ -193,29 +193,14 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Asegusese de configurar la clase KMeans", "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(0);
         }
-        /*Point[] cent = new Point[2];
-        try {
-            Random r = new Random();
-            for (int i = 0; i < 2; i++) {
-                cent[i] = new Point(r.nextInt(600),r.nextInt(600));
-                cent[i].setColor(new Color(r.nextInt(200), r.nextInt(200), r.nextInt(200)));
-            }
-            KMeans km = new KMeans();
-            km.configure(500, cent);
-            km.run();
-            jPanel1 = new ChartPanel(km.getCentroid(), km.getAleatoryPoints());
-            jPanel1.setBounds(0, 0, 600, 600);
-            add(jPanel1);
-        } catch (NullPointerException ex) {
-            JOptionPane.showMessageDialog(rootPane, "Asegusese de configurar la clase KMeans", "Error", JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
-        }*/
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         new Main();
     }
 
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField classes;

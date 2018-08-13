@@ -44,4 +44,11 @@ public class Point {
     public int getX(){return x;}
     public int getY(){return y;}
     public Color getColor(){return color;}
+    
+    /*
+     * Método to String 
+     */
+    public String toString(){
+        return "X: "+getX()+" Y: "+getY()+" Color: "+getColor();
+    }
 }

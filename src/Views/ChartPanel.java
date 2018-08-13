@@ -24,6 +24,8 @@ public class ChartPanel extends JPanel {
      * Tenemos un constructor en el cual recibe como parámetros el arreglo de 
      * puntos aleatorios generados, así como el arreglo de los atractores
      */
+    public ChartPanel(){
+    }
     public ChartPanel(Point[] centr, Point[] points){        
         this.centroids=centr;
         this.points=points;

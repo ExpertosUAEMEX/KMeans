@@ -54,16 +54,7 @@ public class Utils {
         for (int i = 0; i < ar.length; i++) {
             ar[i] = new Point((int) (r.nextDouble() * 590 + 5), (int) (r.nextDouble() * 590 + 5));
             ar[i].setColor(Color.WHITE);
-            /*if(i%3!=0){6
-                ar[i].setX(ar[i].getX()*-1);
-                
-            }else if(i%2!=0){
-                ar[i].setY(ar[i].getY()*-1);
-            }else if(i%7!=0){
-                ar[i].setY(ar[i].getY()*-1);
-                ar[i].setX(ar[i].getX()*-1);
-            }*/
-            // System.out.println("'"+ar[i].getX()+","+ar[i].getY()+"'");
+            
         }
 
     }
