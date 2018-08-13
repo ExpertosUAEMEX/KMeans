@@ -83,7 +83,7 @@ public class KMeans {
                 count++;
             }
         }
-        if(count!=cnt.length){ f=false;}
+        if(count==cnt.length){ f=false;}
         return f;
     }
 }

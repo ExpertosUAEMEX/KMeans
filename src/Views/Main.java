@@ -23,6 +23,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents(); 
         setTable();
+        setTitle("K-Means");
         getContentPane().setBackground(Color.DARK_GRAY);
         setVisible(true);
 
