@@ -95,7 +95,7 @@ public class Main extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Atractores:");
 
-        jButton1.setText("Generar Centroides");
+        jButton1.setText("¡¡KMeans!!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

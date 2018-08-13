@@ -38,7 +38,7 @@ public class ChartPanel extends JPanel {
      */
     @Override
     public void paint(Graphics g){
-        g.create();
+        
         g.setColor(Color.WHITE);
         g.fillRect(getWidth()/2, 0, 2, getHeight());
         g.fillRect(0, getHeight()/2,getWidth() , 2);
