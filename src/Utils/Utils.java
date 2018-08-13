@@ -32,16 +32,16 @@ public class Utils {
     public static void calculateCentroid(Point[] objectsClass, Point attractor) {
         int sumX = 0;
         int sumY = 0;
+        int cont=0;
         for (Point p : objectsClass) {
             if (p.getColor().equals(attractor.getColor())) {
                 sumX += p.getX() - (300);
                 sumY += (300) - p.getY();
-            } else {
-                break;
+                cont++;
             }
         }
-        attractor.setX(sumX / objectsClass.length);
-        attractor.setY(sumY / objectsClass.length);
+        attractor.setX(sumX / cont);
+        attractor.setY(sumY / cont);
     }
 
     /*

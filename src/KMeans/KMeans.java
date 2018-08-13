@@ -50,9 +50,9 @@ public class KMeans {
     public void run() throws NullPointerException {
         ArrayList<Integer> dist;
         ArrayList<Integer> sort;
-        int x = 0;
-        int y = 0;
-        //while (x == centroid[0].getX() && y == centroid[0].getY()) {
+        boolean flag= true;
+        while (flag) {
+    
             for (Point p : aleatoryPoints) {
                 dist = new ArrayList<>();
                 sort = new ArrayList<>();
@@ -63,11 +63,27 @@ public class KMeans {
                 Collections.sort(sort);
                 p.setColor(centroid[dist.indexOf(sort.get(0))].getColor());
             }
+            int x[] = new int[centroid.length];
+            int y[] = new int[centroid.length];
+            for(int i=0; i<centroid.length; i++){
+                x[i]= centroid[i].getX();
+                y[i]= centroid[i].getY();
+            }
             for (Point c : centroid) {
                 Utils.calculateCentroid(aleatoryPoints, c);
             }
-          //  x=centroid[0].getX();
-          //  y=centroid[0].getY();
-        //}
+            flag=getChange(centroid, x, y);
+        }
+    }
+    private boolean getChange(Point[] cnt, int[] x, int[] y){
+        boolean f= true;
+        int count =0;
+        for(int i=0;i<cnt.length;i++){
+            if(cnt[i].getX()==x[i]&&cnt[i].getY()==y[i]){
+                count++;
+            }
+        }
+        if(count!=cnt.length){ f=false;}
+        return f;
     }
 }
